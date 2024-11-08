@@ -1,0 +1,9 @@
+[submodule "iac"]
+	path = iac
+	url = git@github.com:rogerrafael7/k2-rci-iac.git
+[submodule "k2-rci-api-orders"]
+	path = k2-rci-api-orders
+	url = git@github.com:rogerrafael7/k2-rci-api-orders.git
+[submodule "k2-rci-api-products"]
+	path = k2-rci-api-products
+	url = git@github.com:rogerrafael7/k2-rci-api-products.git
