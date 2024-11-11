@@ -1,0 +1,649 @@
+{
+	"info": {
+		"_postman_id": "e7eed016-46f3-494e-914d-812a63eb6e35",
+		"name": "k2-RCI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29006644"
+	},
+	"item": [
+		{
+			"name": "api-product",
+			"item": [
+				{
+					"name": "HealthCheck",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/products?page=1&limit=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/products?page=1&limit=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "362"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"page\": 1,\n    \"limit\": 2,\n    \"totalItems\": 12,\n    \"totalPages\": 6,\n    \"hasNextPage\": true,\n    \"hasPreviousPage\": false,\n    \"data\": [\n        {\n            \"id\": \"40caa500-dd9c-4d50-8b40-9a512e14139c\",\n            \"name\": \"teste2\",\n            \"price\": 1000,\n            \"description\": \"android\",\n            \"type\": \"celular\"\n        },\n        {\n            \"id\": \"cb47d71f-3faf-4d38-9eba-0d2e7760920c\",\n            \"name\": \"Tasty Rubber Table\",\n            \"price\": 62.44,\n            \"description\": \"laborum omnis ducimus\",\n            \"type\": \"Tasty\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Products By-Ids",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/products/by-ids?productIds=40caa500-dd9c-4d50-8b40-9a512e14139a, 40caa500-dd9c-4d50-8b40-9a512e14139c, cb47d71f-3faf-4d38-9eba-0d2e7760920c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products",
+								"by-ids"
+							],
+							"query": [
+								{
+									"key": "productIds",
+									"value": "40caa500-dd9c-4d50-8b40-9a512e14139a, 40caa500-dd9c-4d50-8b40-9a512e14139c, cb47d71f-3faf-4d38-9eba-0d2e7760920c"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Products By-Ids",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/products/by-ids?productIds=40caa500-dd9c-4d50-8b40-9a512e14139a, 40caa500-dd9c-4d50-8b40-9a512e14139c, cb47d71f-3faf-4d38-9eba-0d2e7760920c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"products",
+										"by-ids"
+									],
+									"query": [
+										{
+											"key": "productIds",
+											"value": "40caa500-dd9c-4d50-8b40-9a512e14139a, 40caa500-dd9c-4d50-8b40-9a512e14139c, cb47d71f-3faf-4d38-9eba-0d2e7760920c"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "340"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"productsFound\": [\n        {\n            \"id\": \"40caa500-dd9c-4d50-8b40-9a512e14139c\",\n            \"name\": \"teste2\",\n            \"price\": 1000,\n            \"description\": \"android\",\n            \"type\": \"celular\"\n        },\n        {\n            \"id\": \"cb47d71f-3faf-4d38-9eba-0d2e7760920c\",\n            \"name\": \"Tasty Rubber Table\",\n            \"price\": 62.44,\n            \"description\": \"laborum omnis ducimus\",\n            \"type\": \"Tasty\"\n        }\n    ],\n    \"productIdsNotFound\": [\n        \"40caa500-dd9c-4d50-8b40-9a512e14139a\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"{{$randomProductName}}\",\n    \"price\": {{$randomPrice}},\n    \"description\": \"{{$randomLoremText}}\",\n    \"type\": \"{{$randomProductAdjective}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomProductName}}\",\n    \"price\": {{$randomPrice}},\n    \"description\": \"{{$randomLoremText}}\",\n    \"type\": \"{{$randomProductAdjective}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "140"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"15dfe3cd-ef42-40e1-afc0-5ff49fcede40\",\n    \"name\": \"Rustic Metal Tuna\",\n    \"price\": 279.43,\n    \"description\": \"Rerum nobis corporis.\",\n    \"type\": \"Sleek\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"teste1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/products/40caa500-dd9c-4d50-8b40-9a512e14139c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products",
+								"40caa500-dd9c-4d50-8b40-9a512e14139c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/products/58e6abb6-c012-4920-b1cf-02672b7b5f7e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products",
+								"58e6abb6-c012-4920-b1cf-02672b7b5f7e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-orders",
+			"item": [
+				{
+					"name": "HealthCheck",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/orders?page=1&limit=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Orders",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/orders?page=1&limit=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"orders"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "624"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"page\": 1,\n    \"limit\": 2,\n    \"totalItems\": 2,\n    \"totalPages\": 1,\n    \"hasNextPage\": false,\n    \"hasPreviousPage\": false,\n    \"data\": [\n        {\n            \"id\": \"300e5644-264f-4d4e-a2c5-17344da0666d\",\n            \"customerId\": \"fa481cc5-7577-457c-b45e-30b501721ce4\",\n            \"totalPrice\": 62.44,\n            \"status\": \"PENDING\",\n            \"items\": [\n                {\n                    \"id\": 1,\n                    \"orderId\": null,\n                    \"productId\": \"cb47d71f-3faf-4d38-9eba-0d2e7760920c\",\n                    \"productUnityValue\": 62.44,\n                    \"quantity\": 1\n                }\n            ]\n        },\n        {\n            \"id\": \"1f9c7cbf-c611-4c9e-b6bc-685635faada5\",\n            \"customerId\": \"a371bb48-8de4-4375-87ae-9b1b5d1d511c\",\n            \"totalPrice\": 624.4,\n            \"status\": \"PENDING\",\n            \"items\": [\n                {\n                    \"id\": 2,\n                    \"orderId\": null,\n                    \"productId\": \"cb47d71f-3faf-4d38-9eba-0d2e7760920c\",\n                    \"productUnityValue\": 62.44,\n                    \"quantity\": 10\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"{{$randomUUID}}\",\n    \"items\": [\n        {\n            \"productId\": \"cb47d71f-3faf-4d38-9eba-0d2e7760920c\",\n            \"quantity\": 10\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Order",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\": \"{{$randomUUID}}\",\n    \"items\": [\n        {\n            \"productId\": \"cb47d71f-3faf-4d38-9eba-0d2e7760920c\",\n            \"quantity\": 10\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/orders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "260"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"1f9c7cbf-c611-4c9e-b6bc-685635faada5\",\n    \"customerId\": \"a371bb48-8de4-4375-87ae-9b1b5d1d511c\",\n    \"totalPrice\": 624.4,\n    \"status\": \"PENDING\",\n    \"items\": [\n        {\n            \"id\": 2,\n            \"orderId\": null,\n            \"productId\": \"cb47d71f-3faf-4d38-9eba-0d2e7760920c\",\n            \"productUnityValue\": 62.44,\n            \"quantity\": 10\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Order Status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"APPROVED\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/orders/1f9c7cbf-c611-4c9e-b6bc-685635faada5/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"orders",
+								"1f9c7cbf-c611-4c9e-b6bc-685635faada5",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order Items",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"items\": [\n        {\n            \"productId\": \"c8838f40-ed9f-4a97-b0b6-dd0c9fbc06f2\",\n            \"quantity\": 2\n        },\n        {\n            \"productId\": \"662b70fd-83c0-452b-8526-c6b54711b212\",\n            \"quantity\": 2\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/orders/300e5644-264f-4d4e-a2c5-17344da0666d/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"orders",
+								"300e5644-264f-4d4e-a2c5-17344da0666d",
+								"items"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Order Status Exception",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"items\": [\n        {\n            \"productId\": \"cb47d71f-3faf-4d38-9eba-0d2e7760920c\",\n            \"quantity\": 10\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/orders/1f9c7cbf-c611-4c9e-b6bc-685635faada5/items",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"orders",
+										"1f9c7cbf-c611-4c9e-b6bc-685635faada5",
+										"items"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "110"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Order status is not PENDING, items cannot be changed after order is in progress\",\n    \"statusCode\": 400\n}"
+						},
+						{
+							"name": "Update Items Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"items\": [\n        {\n            \"productId\": \"c8838f40-ed9f-4a97-b0b6-dd0c9fbc06f2\",\n            \"quantity\": 2\n        },\n        {\n            \"productId\": \"662b70fd-83c0-452b-8526-c6b54711b212\",\n            \"quantity\": 2\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/orders/300e5644-264f-4d4e-a2c5-17344da0666d/items",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"orders",
+										"300e5644-264f-4d4e-a2c5-17344da0666d",
+										"items"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "376"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"300e5644-264f-4d4e-a2c5-17344da0666d\",\n    \"customerId\": \"fa481cc5-7577-457c-b45e-30b501721ce4\",\n    \"totalPrice\": 1539.48,\n    \"status\": \"PENDING\",\n    \"items\": [\n        {\n            \"id\": 5,\n            \"orderId\": null,\n            \"productId\": \"c8838f40-ed9f-4a97-b0b6-dd0c9fbc06f2\",\n            \"productUnityValue\": 724.25,\n            \"quantity\": 2\n        },\n        {\n            \"id\": 6,\n            \"orderId\": null,\n            \"productId\": \"662b70fd-83c0-452b-8526-c6b54711b212\",\n            \"productUnityValue\": 45.49,\n            \"quantity\": 2\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Cancel Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"teste4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/orders/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"orders",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

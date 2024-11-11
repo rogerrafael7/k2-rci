@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: k2_rci_user
+      POSTGRES_PASSWORD: k2_rci_pass
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - k2_iac_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U k2_rci_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "5432:5432"
+
+  k2-rci-products:
+    build:
+      context: ..
+      dockerfile: iac/Dockerfile-api-products
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DB_HOST: postgres
+      DB_USER: k2_rci_user
+      DB_PASSWORD: k2_rci_pass
+      DB_NAME: k2_rci_products
+    networks:
+      - k2_iac_network
+    ports:
+      - "8081:8081"
+
+  k2-rci-orders:
+    build:
+      context: ..
+      dockerfile: iac/Dockerfile-api-orders
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DB_HOST: postgres
+      DB_USER: k2_rci_user
+      DB_PASSWORD: k2_rci_pass
+      DB_NAME: k2_rci_orders
+      API_PRODUCTS_URL: http://k2-rci-products:8081
+    networks:
+      - k2_iac_network
+    ports:
+      - "8082:8082"
+
+networks:
+  k2_iac_network:
+    driver: bridge

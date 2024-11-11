@@ -1,0 +1,9 @@
+FROM openjdk:21 AS builder-orders
+WORKDIR /build
+COPY k2-rci-api-orders /build/
+RUN ./mvnw clean install -DskipTests
+
+FROM openjdk:21
+WORKDIR /app
+COPY --from=builder-orders  /build /app
+CMD ["java", "--enable-preview", "-jar", "./target/k2-rci-api-orders-runner.jar"]
