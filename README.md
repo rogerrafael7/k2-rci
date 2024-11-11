@@ -2,6 +2,7 @@
 
 Framework utilizado: **Quarkus**
 
+Para rodar o projeto:
 ```bash
 $ cd iac
 $ docker-compose up -d
