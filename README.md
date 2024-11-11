@@ -32,10 +32,10 @@ O projeto está dividido em 3 módulos:
   - **DELETE /products/{id}** - Deleta um produto
 
 - **Orders API**
-- **GET /orders** - Lista todos os pedidos
-- **GET /orders/{id}** - Busca um pedido por ID
-- **POST /orders** - Cria um novo pedido
-- **PATCH /orders/{id}/status** - Atualiza o status de um pedido
-- **PATCH /orders/{id}/items** - Atualiza os items de um pedido
-- **DELETE /orders/{id}** - Deleta um pedido
+  - **GET /orders** - Lista todos os pedidos
+  - **GET /orders/{id}** - Busca um pedido por ID
+  - **POST /orders** - Cria um novo pedido
+  - **PATCH /orders/{id}/status** - Atualiza o status de um pedido
+  - **PATCH /orders/{id}/items** - Atualiza os items de um pedido
+  - **DELETE /orders/{id}** - Deleta um pedido
 
